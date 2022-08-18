@@ -20,4 +20,5 @@ public class ProductRestController {
     public void create(@RequestBody @Valid ProductDTORequest productDTORequest) {
         productService.create(productDTORequest);
     }
+
 }
