@@ -20,5 +20,16 @@ public class ProductRestController {
     public void create(@RequestBody @Valid ProductDTORequest productDTORequest) {
         productService.create(productDTORequest);
     }
+    @GetMapping("/{id}")
+    public ProductDTOResponse findById(@PathVariable Long id){
+        return productService.findById(id);
+
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteById(@PathVariable Long id){
+        productService.deleteById(id);
+
+    }
 
 }

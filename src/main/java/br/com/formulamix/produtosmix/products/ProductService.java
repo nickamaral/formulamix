@@ -23,4 +23,18 @@ public class ProductService {
 ProductModel productModel= productDTORequest.createModel();
 productRepository.save(productModel);
     }
+
+    public ProductDTOResponse findById(Long id) {
+        ProductModel productModel = getById(id);
+        return ProductDTOResponse.of(productModel);
+    }
+
+    public void deleteById(Long id) {
+        ProductModel productModel = getById(id);
+        productRepository.delete(productModel);
+
+    }
+    private ProductModel getById(Long id){
+        return productRepository.findById(id).orElseThrow(ProductNotFoundException::new);
+    }
 }
