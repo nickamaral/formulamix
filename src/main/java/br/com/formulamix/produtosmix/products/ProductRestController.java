@@ -32,4 +32,15 @@ public class ProductRestController {
 
     }
 
+    @PutMapping("/{id}")
+    public void updateById(@PathVariable Long id, @RequestBody @Valid ProductDTORequest productDTORequest){
+        productService.updateById(id, productDTORequest);
+
+    }
+
+    @PatchMapping("/{id}")
+    public void patchById(@PathVariable Long id, @RequestBody @Valid UpdateProductDTORequest updateProductDTORequest){
+        productService.updateById(id, updateProductDTORequest);
+    }
+
 }

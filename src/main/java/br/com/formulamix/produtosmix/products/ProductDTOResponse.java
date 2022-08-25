@@ -24,8 +24,8 @@ public class ProductDTOResponse {
     public static ProductDTOResponse of(ProductModel productModel) {
         return new ProductDTOResponseBuilder().id(productModel.getId())
                 .description(productModel.getDescription())
-                //.title(productModel.getTitle())
-                .title("xxxxx")
+                .title(productModel.getTitle())
+                //.tittle("xxxxx")
                 .quantity(productModel.getQuantity())
                 .value(productModel.getValue()).build();
 

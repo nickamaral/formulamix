@@ -22,4 +22,16 @@ public class ProductModel {
     private String description;
     private BigDecimal value;
     private Integer quantity;
+
+    public void updatevaluesfrom(ProductDTORequest productDTORequest) {
+        this.title=productDTORequest.getTitle();
+        this.description=productDTORequest.getDescription();
+        this.value=productDTORequest.getValue();
+        this.quantity=productDTORequest.getQuantity();
+    }
+
+    public void updatevaluesfrom(UpdateProductDTORequest updateProductDTORequest) {
+        this.value=updateProductDTORequest.getValue();
+        this.quantity= updateProductDTORequest.getQuantity();
+    }
 }

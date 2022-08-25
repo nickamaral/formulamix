@@ -37,4 +37,16 @@ productRepository.save(productModel);
     private ProductModel getById(Long id){
         return productRepository.findById(id).orElseThrow(ProductNotFoundException::new);
     }
+
+    public void updateById(Long id, ProductDTORequest productDTORequest) {
+        ProductModel productModel = getById(id);
+        productModel.updatevaluesfrom(productDTORequest);
+        productRepository.save(productModel);
+    }
+
+    public void updateById(Long id, UpdateProductDTORequest updateProductDTORequest) {
+        ProductModel productModel = getById(id);
+        productModel.updatevaluesfrom(updateProductDTORequest);
+        productRepository.save(productModel);
+    }
 }
